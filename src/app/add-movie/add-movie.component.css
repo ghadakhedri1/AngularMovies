@@ -1,0 +1,12 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+form {
+  margin: auto;
+  width: 50%;
+  border: 3px solid whitesmoke;
+  padding: 10px;
+  background-color: white;
+}
+html{
+  background-color: #EBEBEB;
+}
+

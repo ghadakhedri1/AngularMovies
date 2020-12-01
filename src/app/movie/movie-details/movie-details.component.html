@@ -1,0 +1,34 @@
+<div class="product-card" style="display: flex;">
+  <div class="product-image">
+
+    <img style="transform: translateX(32%); width: 60%;" src="../../assets/images/{{u.coverUrl}}">
+  </div>
+  <div class="product-info">
+    <h5>{{u.title}}</h5>
+    <h6><label>Year:</label>{{u.year}}</h6>
+    <h6><label>Genre:</label>{{u.genre}}</h6>
+    <h6><label>Director:</label>{{u.director}}</h6>
+    <h6><label>Actors:</label>{{u.actors}}</h6>
+    <h6><label>Description:</label>{{u.description}}</h6>
+    <label>la capcité des Salles:</label><h6 *ngFor="let salle of outputArray ;let index = index  ">
+    {{isBooked ? +salle.capacite + 1 : salle.capacite}}
+  </h6>
+    <h6><label>Rating:</label>
+      <h1 class="text-primary">
+        <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"></ngb-rating>
+      </h1>
+    </h6>
+    <button type="button" class="btn btn-outline-warning" [routerLink]="['/update/movie/',u.id]">Update</button>&nbsp;
+
+    <button type="button" class="btn btn-outline-danger" [routerLink]="['/delete/movie/',u.id]">delete</button>&nbsp;
+    <app-book-movie (changeStatus)="onChangeStatus()" [clicked]="isBooked"></app-book-movie>
+    <br>
+    <img src="../../assets/images/like.png" height="50px;" style="cursor: pointer;" (click)="onClickLike(i)">
+    <img src="../../assets/images/dislike.png" height="40px;" style="cursor: pointer;" (click)="onClickDislike(i)">
+
+    <label style="font-size: 60px;" *ngIf="selectedIndex == i ">{{numberOfLikes < 0 ? 0 : numberOfLikes}}</label>
+
+
+  </div>
+
+</div>

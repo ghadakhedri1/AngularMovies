@@ -1,0 +1,66 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "The Shawshank Redemption",
+      "year": "1994",
+      "genre": "Drama",
+      "director": "Frank Darabont",
+      "actors": "Morgan Freeman, Tim Robbins, Bob Gunton",
+      "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+      "rating": "6",
+      "coverUrl": "1.jpg",
+      "salles": {
+        "nom": "Salle A",
+        "capacite": "2"
+      }
+    },
+    {
+      "id": 2,
+      "title": "The Godfather",
+      "year": "1972",
+      "genre": "Crime",
+      "director": "Francis Ford Coppola",
+      "actors": "Marlon Brando, Al Pacino, James Caan",
+      "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+      "rating": "5",
+      "coverUrl": "2.jpg",
+      "salles": {
+        "nom": "Salle B",
+        "capacite": "2"
+      }
+    },
+    {
+      "id": 3,
+      "title": "The Dark Knight",
+      "year": "2008",
+      "genre": "Action",
+      "director": "Christopher Nolan",
+      "actors": "Christian Bale, Heath Ledger, Aaron Eckhart",
+      "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the Dark Knight must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+      "rating": "5",
+      "coverUrl": "3.jpg",
+      "salles": {
+        "nom": "Salle C",
+        "capacite": "2"
+      }
+    }
+  ],
+  "salles": [
+    {
+      "nom": "Salle A",
+      "capacite": "3"
+
+    },
+    {
+      "nom": "Salle B",
+      "capacite": "20"
+
+    },
+    {
+      "id": "Salle C",
+      "capacite": "50"
+
+    }
+  ]
+}

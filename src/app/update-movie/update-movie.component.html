@@ -1,0 +1,44 @@
+<html>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <a class="navbar-brand" >Mov</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/movies']">Movies <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label>id </label>
+    <input class="form-control" formControlName="id">
+  </div>
+  <div class="form-group">
+    <label>title</label>
+    <input class="form-control" formControlName="title"></div>
+  <div class="form-group">
+    <label>Year</label>
+    <input class="form-control" formControlName="year"></div>
+  <div class="form-group">
+    <label>Genre</label>
+    <input class="form-control" formControlName="genre"></div>
+  <div class="form-group">
+    <label>director</label>
+    <input class="form-control" formControlName="director"></div>
+  <div class="form-group">
+    <label>actors</label>
+    <input class="form-control" formControlName="actors"></div>
+  <div class="form-group">
+    <label>description</label>
+    <input class="form-control" formControlName="description"></div>
+  <div class="form-group">
+    <label>rating</label>
+    <input class="form-control" formControlName="rating"></div>
+  <button class="btn btn-primary">modifier</button>&nbsp;
+  <button class="btn btn-info" routerLink="['/movies']">Retour</button>
+</form>
+</html>
