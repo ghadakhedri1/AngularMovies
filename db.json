@@ -9,11 +9,7 @@
       "actors": "Morgan Freeman, Tim Robbins, Bob Gunton",
       "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
       "rating": "6",
-      "coverUrl": "1.jpg",
-      "salles": {
-        "nom": "Salle A",
-        "capacite": "2"
-      }
+      "coverUrl": "1.jpg"
     },
     {
       "id": 2,
@@ -50,17 +46,14 @@
     {
       "nom": "Salle A",
       "capacite": "3"
-
     },
     {
       "nom": "Salle B",
       "capacite": "20"
-
     },
     {
-      "id": "Salle C",
+      "nom": "Salle C",
       "capacite": "50"
-
     }
   ]
 }

@@ -27,5 +27,6 @@
 <section>
   <app-movie-details *ngFor="let movie of sm.movies |searchfilter:searchValue ;let index = index " 
       [u]="movie" [i] = "index"  ></app-movie-details>
-      <app-salle [salles]="salle" (salleSelected)="selected($event)"></app-salle>
+      <!-- <app-salle [salles]="salle" (salleSelected)="selected($event)"></app-salle> -->
+      <app-salle></app-salle>
 </section>

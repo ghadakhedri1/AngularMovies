@@ -1,2 +1,21 @@
-Afficher les salles dispos
-
+<br>
+<div class="container ">
+    <h2>Salle Disponible</h2>
+    <p>Voici les salles disponible et leur capacité:</p>            
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nom de la salle</th>
+          <th>Capacite</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let salle of serviceSalle.salles" >
+        <tr>
+          <td>{{ salle.nom }}</td>
+          <td>{{ salle.capacite }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
