@@ -1,7 +1,10 @@
 <br>
 <div class="container ">
+  
     <h2>Salle Disponible</h2>
-    <p>Voici les salles disponible et leur capacité:</p>            
+    <p>Voici les salles disponible et leur capacité:</p>  
+    <input type="text" [(ngModel)]="searchedItem" (input)="onSearch()"> 
+    {{ searchedItem }}         
     <table class="table table-striped">
       <thead>
         <tr>

@@ -19,13 +19,22 @@
     <div class="collection-sort">
       <button type="button" class="btn btn-outline-primary" [routerLink]="['/addMovie']">Add Movie</button>&nbsp;
     </div>
+    <div class="collection-sort">
+      <button type="button" class="btn btn-outline-success" (click)="onRefresh()">Fetch</button>&nbsp;
+    </div>&nbsp;&nbsp;
+    <div class="collection-sort">
+      <select  name="" id="" class="list-group-item-light" style="height: 78%;" [(ngModel)]="selectedItem">
+        <option>Genre</option>
+        <option>Year</option>
+      </select>
+    </div>&nbsp;&nbsp;
     <div>
-      <input type="text" class="form-control" [(ngModel)]="searchValue" id="search" placeholder="Search here">
+      <input type="text" class="form-control" [(ngModel)]="searchValue" id="search" placeholder="Search here" (input)="onSearch()">
     </div>
   </div>
 </nav>
 <section>
-  <app-movie-details *ngFor="let movie of sm.movies |searchfilter:searchValue ;let index = index " 
+  <app-movie-details *ngFor="let movie of movies;let index = index " 
       [u]="movie" [i] = "index"  ></app-movie-details>
       <!-- <app-salle [salles]="salle" (salleSelected)="selected($event)"></app-salle> -->
       <app-salle></app-salle>

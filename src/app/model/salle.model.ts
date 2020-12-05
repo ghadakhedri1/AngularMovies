@@ -1,8 +1,8 @@
-import {Movie} from './movie.model';
+import { Movie } from './movie.model';
 
 export class Salle {
- public nom: string;
-  public  capacite: number;
+  public nom: string;
+  public capacite: number;
 
 
   constructor(nom: string, capacite: number) {

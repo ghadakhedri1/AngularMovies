@@ -8,7 +8,6 @@ import {Movie} from '../model/movie.model';
   styleUrls: ['./add-salle.component.css']
 })
 export class AddSalleComponent implements OnInit {
-movie : Movie [];
   constructor(public salleService: SalleService) {
   }
 

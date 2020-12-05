@@ -16,8 +16,10 @@ export class MovieService {
 
   getMovie(index: number) {
     return this.movies[index];
-}
-
+  }
+  getMovies() {
+    return this.movies;
+  }
   getAllMovies() {
     return this.http.get<Movie[]>('http://localhost:3000/movies').subscribe(
       (data) => {
@@ -32,7 +34,7 @@ export class MovieService {
       }
     );
   }
-  getSalleMovies(index : number){
+  getSalleMovies(index: number) {
     this.salles = this.movies[index].salles;
     return this.salles;
   }

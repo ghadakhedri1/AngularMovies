@@ -22,7 +22,7 @@
       "rating": "5",
       "coverUrl": "2.jpg",
       "salles": {
-        "nom": "Salle B",
+        "nom": "B",
         "capacite": "2"
       }
     },
@@ -37,22 +37,22 @@
       "rating": "5",
       "coverUrl": "3.jpg",
       "salles": {
-        "nom": "Salle C",
+        "nom": "C",
         "capacite": "2"
       }
     }
   ],
   "salles": [
     {
-      "nom": "Salle A",
+      "nom": "A",
       "capacite": "3"
     },
     {
-      "nom": "Salle B",
+      "nom": "B",
       "capacite": "20"
     },
     {
-      "nom": "Salle C",
+      "nom": "C",
       "capacite": "50"
     }
   ]

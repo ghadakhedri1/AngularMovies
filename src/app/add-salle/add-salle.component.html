@@ -17,50 +17,32 @@
 </nav>
 <div class="card">
   <div class="card-header">
-    Ajouter Salle
+    ADD Salle
   </div>
   <div class="card-body">
     <form #Form="ngForm">
 
       <div class="form-group col-12">
-        <label>Id</label>
-        <input type="text" class="form-control" #id="ngModel" ngModel name="id" required
-               pattern="^[0-9]+$">
+        <label>Name Salle</label>
+        <input type="text" class="form-control" #nom="ngModel" ngModel name="nom" required
+               pattern="[a-zA-Z ]*">
       </div>
-        <div *ngIf="!id?.valid && (id?.dirty || id?.touched)" class="alert alert-danger">
+        <div *ngIf="!nom?.valid && (nom?.dirty || nom?.touched)" class="alert alert-danger">
 
-          <strong *ngIf="id.errors.required">Veuillez saisir un id </strong>
-          <strong *ngIf="id.errors.pattern">seulement un entier </strong>
+          <strong *ngIf="nom.errors.required">Salle name is required </strong>
+          <strong *ngIf="nom.errors.pattern">Only characters are allowed  </strong>
         </div>
 
       <div class="form-group col-12">
-        <label>Capacite</label>
-        <input type="text" class="form-control" #capacite="ngModel" ngModel name="capacite" required maxlength="2"
+        <label>Capacity</label>
+        <input type="text" class="form-control" #capacite="ngModel" ngModel name="capacite" required
                pattern="^[0-9]+$">
       </div>
         <div *ngIf="!capacite?.valid && (capacite?.dirty || capacite?.touched)" class="alert alert-danger">
           <strong *ngIf="capacite.errors.required">Veuillez saisir capacité </strong>
-          <strong *ngIf="capacite.errors.maxlength">
-            id Maximum Length is {{capacite.errors.maxlength?.requiredLength}} </strong>
           <strong *ngIf="capacite.errors.pattern">
-            seulement un entier </strong>
+            Only numbers are allowed </strong>
         </div>
-
-
-
-      <div class="form-group col-12">
-        <label>Id Movie</label>
-        <input type="text" class="form-control" ngModel name="movie">
-      </div>
-      <p>
-        <label for="country">country </label>
-        <select id="country" name="country">
-          <option [ngValue]="m.id" *ngFor="let m of movie">
-            {{m.title}}
-          </option>
-        </select>
-      </p>
-
       <div class="form-group col-12">
         <button type="submit" class="btn btn-primary mr-2" [disabled]="!Form.valid"
                 (click)="salleService.addSalle(Form.value)">save
