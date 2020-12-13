@@ -132,7 +132,8 @@
       <strong>Only numbers are allowed </strong>
     </div>
   </div>
-  <input type="file" (change)="onFileChanged($event)" formControlName="coverUrl">
+  <input id="file" type="file" formControlName="coverUrl" (change)="onFileChange($event)">
+  <img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:100px">
   <br><br>
   <button type="button" class="btn btn-outline-success" [disabled]="!form.valid" (click)="sm.addMovie(form.value)">
     ajouter

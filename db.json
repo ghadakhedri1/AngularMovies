@@ -8,7 +8,7 @@
       "director": "Frank Darabont",
       "actors": "Morgan Freeman, Tim Robbins, Bob Gunton",
       "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-      "rating": "6",
+      "rating": "3",
       "coverUrl": "1.jpg"
     },
     {
@@ -19,12 +19,8 @@
       "director": "Francis Ford Coppola",
       "actors": "Marlon Brando, Al Pacino, James Caan",
       "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-      "rating": "5",
-      "coverUrl": "2.jpg",
-      "salles": {
-        "nom": "B",
-        "capacite": "2"
-      }
+      "rating": "4",
+      "coverUrl": "2.jpg"
     },
     {
       "id": 3,

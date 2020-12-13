@@ -39,7 +39,7 @@
                pattern="^[0-9]+$">
       </div>
         <div *ngIf="!capacite?.valid && (capacite?.dirty || capacite?.touched)" class="alert alert-danger">
-          <strong *ngIf="capacite.errors.required">Veuillez saisir capacité </strong>
+          <strong *ngIf="capacite.errors.required">Salle capacite is required </strong>
           <strong *ngIf="capacite.errors.pattern">
             Only numbers are allowed </strong>
         </div>

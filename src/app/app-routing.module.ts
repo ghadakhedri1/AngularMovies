@@ -7,6 +7,7 @@ import {UpdateMovieComponent} from './update-movie/update-movie.component';
 import {DeleteMovieComponent} from './delete-movie/delete-movie.component';
 import {SalleComponent} from './salle/salle.component';
 import {AddSalleComponent} from './add-salle/add-salle.component';
+import { UpdateSalleComponent } from './update-salle/update-salle.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'movies', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'update/movie/:id', component: UpdateMovieComponent},
   {path: 'delete/movie/:id', component: DeleteMovieComponent},
   {path: 'salles', component: SalleComponent},
-  {path: 'addSalle', component: AddSalleComponent}
+  {path: 'addSalle', component: AddSalleComponent},
+  
 
 
 ];

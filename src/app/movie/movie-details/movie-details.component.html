@@ -1,4 +1,4 @@
-<div class="product-card" style="display: flex;">
+<!-- <div class="product-card" style="display: flex;">
   <div class="product-image">
 
     <img style="transform: translateX(32%); width: 60%;" src="../../assets/images/{{u.coverUrl}}">
@@ -31,4 +31,39 @@
 
   </div>
 
+</div> -->
+<div id="movie-card-list">
+  <div class="movie-card">
+    <img style=" position:absolute;
+    clip: rect(-95px,595px,427px,-4px);
+    height: 235%;" src="../../assets/images/{{u.coverUrl}}">
+    <div class="movie-card__overlay"></div>
+    <div class="movie-card__share" style="transform: translate(-58px,12px)" >
+      <app-book-movie (changeStatus)="onChangeStatus()" [clicked]="isBooked" ></app-book-movie>
+      <button class="movie-card__icon " style="transform: translate(46px,-23px) ; background-color: indigo;" [routerLink]="['/update/movie/',u.id]"><i style="color: white;">Update</i></button>
+      <button class="movie-card__icon" style="transform: translate(113px,-46px);background-color:red;"  [routerLink]="['/delete/movie/',u.id]"><i style="color: white;">Delete</i></button>
+    </div>
+    <div class="movie-card__content">
+      <div class="movie-card__header">
+        <h1 class="movie-card__title">{{u.title}}</h1>
+        <h4 class="movie-card__info">{{u.genre}}</h4>
+      </div>
+      <h6><label>Year:</label>{{u.year}}</h6>
+      <h6><label>Director:</label>{{u.director}}</h6>
+      <p class="movie-card__desc" style="color: white;">{{u.description}}</p>
+      <h6><label>Actors:</label>{{u.actors}}</h6>
+      <label>la capcité des Salles:</label>
+      <h6 *ngFor="let salle of outputArray ;let index = index  ">
+        {{isBooked ? +salle.capacite + 1 : salle.capacite}}
+      </h6>
+      <h6><label>Rating:</label>
+        <h1 class="text-primary">
+          <ngb-rating [max]="5" rate="{{u.rating}}"  [readonly]="false"></ngb-rating>
+          
+        </h1>
+        <app-movie-like></app-movie-like>
+      </h6>
+      <hr>
+    </div>
+  </div>
 </div>

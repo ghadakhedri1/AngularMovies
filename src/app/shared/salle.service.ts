@@ -34,7 +34,6 @@ public  salles: Salle[];
       (data) => {
         console.log('salle added');
         this.router.navigate(['salles']);
-
       }
       ,
       error => {
@@ -45,4 +44,5 @@ public  salles: Salle[];
       }
     );
   }
+ 
 }

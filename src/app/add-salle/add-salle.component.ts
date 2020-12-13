@@ -11,7 +11,9 @@ export class AddSalleComponent implements OnInit {
   constructor(public salleService: SalleService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
+
+
 
 }

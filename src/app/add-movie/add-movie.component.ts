@@ -8,7 +8,7 @@ import {FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./add-movie.component.css']
 })
 export class AddMovieComponent implements OnInit {
-
+  imageSrc : string;
   constructor(public sm: MovieService, private f: FormBuilder) {
   }
 
@@ -21,19 +21,32 @@ export class AddMovieComponent implements OnInit {
       actors: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
       description: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
       rating: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-      coverUrl: ['', [Validators.required]],
+      coverUrl: ['' ],
+      fileSource: ['']
     }
   );
-  selectedFile = null;
+ 
 
   get id() {
     return this.form.get('id');
   }
 
-  onFileChanged(event) {
-    this.selectedFile = event.target.files[0];
-  }
+  onFileChange(event) {
 
+    const reader = new FileReader();
+
+
+
+    if (event.target.files && event.target.files.length) {
+      const [coverUrl] = event.target.files;
+      reader.readAsDataURL(coverUrl);
+      reader.onload = () => {
+        this.imageSrc = reader.result as string;
+        this.form.patchValue({
+          fileSource: reader.result
+        });
+      };
+    }}
   ngOnInit(): void {
   }
 

@@ -15,6 +15,7 @@ import { AddSalleComponent } from './add-salle/add-salle.component';
 import { SearchfilterPipe } from './searchfilter.pipe';
 import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
 import { BookMovieComponent } from './movie/movie-details/book-movie/book-movie.component';
+import { MovieLikeComponent } from './movie/movie-details/movie-like/movie-like.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BookMovieComponent } from './movie/movie-details/book-movie/book-movie.
     AddSalleComponent,
     SearchfilterPipe,
     MovieDetailsComponent,
-    BookMovieComponent
+    BookMovieComponent,
+    MovieLikeComponent
   ],
   imports: [
     BrowserModule,

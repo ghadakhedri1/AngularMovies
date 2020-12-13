@@ -1,21 +1,22 @@
-<br>
-<div class="container ">
+<hr>
+<div class="container " style="background-color: gray; opacity: 70%; color: white;"> 
   
     <h2>Salle Disponible</h2>
     <p>Voici les salles disponible et leur capacité:</p>  
-    <input type="text" [(ngModel)]="searchedItem" (input)="onSearch()"> 
-    {{ searchedItem }}         
+    <input type="text" [(ngModel)]="searchedItem" (input)="onSearch()" placeholder="Search here!">
+    <hr> 
+     
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Nom de la salle</th>
-          <th>Capacite</th>
+          <th style="color: white;"> Nom de la salle</th>
+          <th style="color: white;">Capacite</th>
         </tr>
       </thead>
-      <tbody *ngFor="let salle of serviceSalle.salles" >
+      <tbody *ngFor="let salle of serviceSalle.salles | searchfilter:searchedItem;" >
         <tr>
-          <td>{{ salle.nom }}</td>
-          <td>{{ salle.capacite }}</td>
+          <td style="color: white;">{{ salle.nom }}</td>
+          <td style="color: white;">{{ salle.capacite }}</td>
           
         </tr>
       </tbody>

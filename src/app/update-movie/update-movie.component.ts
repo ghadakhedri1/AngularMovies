@@ -18,15 +18,16 @@ export class UpdateMovieComponent implements OnInit {
 
   form = this.f.group(
     {
-      id: ['', Validators.required],
-      title: ['', Validators.required],
-      year: ['', [Validators.required]],
-      genre: ['', [Validators.required]],
-      director: ['', [Validators.required]],
-      actors: ['', [Validators.required]],
-      description: ['', [Validators.required]],
-      rating: ['', [Validators.required]],
-      coverUrl: ['', [Validators.required]],
+      id: ['', [Validators.required , Validators.pattern('^[0-9]+$')]],
+      title: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
+      year: ['', [Validators.required, Validators.minLength(4), Validators.pattern('^[0-9]+$')]],
+      genre: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
+      director: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
+      actors: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
+      description: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]],
+      rating: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      coverUrl: ['' ],
+      fileSource: ['']
     }
   );
 
