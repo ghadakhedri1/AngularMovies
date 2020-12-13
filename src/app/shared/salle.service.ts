@@ -33,7 +33,7 @@ public  salles: Salle[];
     return this.http.post<Salle>(url, data).subscribe(
       (data) => {
         console.log('salle added');
-        this.router.navigate(['salles']);
+        this.router.navigate(['movies']);
       }
       ,
       error => {

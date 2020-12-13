@@ -6,7 +6,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./book-movie.component.css']
 })
 export class BookMovieComponent implements OnInit {
-  @Output() changeStatus = new EventEmitter();
+@Output() changeStatus = new EventEmitter();
  @Input() clicked: boolean;
 
   constructor() {

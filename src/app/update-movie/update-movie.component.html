@@ -1,44 +1,128 @@
 <html>
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-  <a class="navbar-brand" >Mov</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/movies']">Movies <span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-  </div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="height: 61px;">
+    <a href="#"><img  style="width: 100px; height: 122px ; position: inherit; transform: translateY(14px) " src="../../assets/images/Logo Ghadflix.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/movies']">Movies <span class="sr-only">(current)</span></a></li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/addSalle']">Salles <span class="sr-only">(current)</span></a></li>
+      </ul>
+    </div>
+  </nav>
 <form [formGroup]="form" (ngSubmit)="submit()">
   <div class="form-group">
     <label>id </label>
-    <input class="form-control" formControlName="id">
+    <input class="form-control" formControlName="id" name="id" id="id" disabled>
+  </div>
+  <div *ngIf="!id.valid && (id.dirty||id.touched)" class="alert alert-danger">
+    <div [hidden]="!id.errors.required">
+      <strong>id is required </strong>
+    </div>
+    <div [hidden]="!id.errors.pattern">
+      <strong>Only numbers are allowed </strong>
+    </div>
   </div>
   <div class="form-group">
     <label>title</label>
-    <input class="form-control" formControlName="title"></div>
+    <input class="form-control" formControlName="title" id="title" name="title"></div>
+    <div *ngIf="!title.valid && (title.dirty||title.touched)" class="alert alert-danger">
+      <div [hidden]="!title.errors.required">
+        <strong>Title is required </strong>
+      </div>
+      <div [hidden]="!title.errors.pattern">
+        <strong>Only characters are allowed </strong>
+      </div>
+      <div [hidden]="!title.errors.minlength">
+        <strong> Min length Allowed is  {{title.errors.minlength?.requiredLength}} </strong>
+      </div>
+    </div>
   <div class="form-group">
     <label>Year</label>
-    <input class="form-control" formControlName="year"></div>
+    <input class="form-control" formControlName="year" name="year" id="year"></div>
+    <div *ngIf="!year.valid && (year.dirty||year.touched)" class="alert alert-danger">
+      <div [hidden]="!year.errors.required">
+        <strong>Year is required </strong>
+      </div>
+      <div [hidden]="!year.errors.pattern">
+        <strong>Only numbers are allowed </strong>
+      </div>
+      <div [hidden]="!year.errors.minlength">
+        <strong>YEAR length Allowed is  {{year.errors.minlength?.requiredLength}}</strong>
+      </div>
+    </div>
   <div class="form-group">
     <label>Genre</label>
-    <input class="form-control" formControlName="genre"></div>
+    <input class="form-control" formControlName="genre" name="genre" id="genre"></div>
+    <div *ngIf="!genre.valid && (genre.dirty||genre.touched)" class="alert alert-danger">
+      <div [hidden]="!genre.errors.required">
+        <strong>genre is required </strong>
+      </div>
+      <div [hidden]="!genre.errors.pattern">
+        <strong>Only characters are allowed </strong>
+      </div>
+      <div [hidden]="!genre.errors.minlength">
+        <strong>YEAR length Allowed is  {{genre.errors.minlength?.requiredLength}}</strong>
+      </div>
+    </div>
   <div class="form-group">
     <label>director</label>
-    <input class="form-control" formControlName="director"></div>
+    <input class="form-control" formControlName="director" name="director" id="director"></div>
+    <div *ngIf="!director.valid && (director.dirty||director.touched)" class="alert alert-danger">
+      <div [hidden]="!director.errors.required">
+        <strong>director is required </strong>
+      </div>
+      <div [hidden]="!director.errors.pattern">
+        <strong>Only characters are allowed </strong>
+      </div>
+      <div [hidden]="!director.errors.minlength">
+        <strong>YEAR length Allowed is  {{director.errors.minlength?.requiredLength}}</strong>
+      </div>
+    </div>
   <div class="form-group">
     <label>actors</label>
-    <input class="form-control" formControlName="actors"></div>
+    <input class="form-control" formControlName="actors" name="actors" id="actors"></div>
+    <div *ngIf="!actors.valid && (actors.dirty||actors.touched)" class="alert alert-danger">
+      <div [hidden]="!actors.errors.required">
+        <strong>actors is required </strong>
+      </div>
+      <div [hidden]="!actors.errors.pattern">
+        <strong>Only characters are allowed </strong>
+      </div>
+      <div [hidden]="!actors.errors.minlength">
+        <strong>YEAR length Allowed is  {{actors.errors.minlength?.requiredLength}}</strong>
+      </div>
+    </div>
   <div class="form-group">
     <label>description</label>
-    <input class="form-control" formControlName="description"></div>
+    <input class="form-control" formControlName="description" name="description" id="description"></div>
+    <div *ngIf="!description.valid && (description.dirty||description.touched)" class="alert alert-danger">
+      <div [hidden]="!description.errors.required">
+        <strong>description is required </strong>
+      </div>
+      <div [hidden]="!description.errors.pattern">
+        <strong>Only characters are allowed </strong>
+      </div>
+      <div [hidden]="!description.errors.minlength">
+        <strong>YEAR length Allowed is  {{description.errors.minlength?.requiredLength}}</strong>
+      </div>
+    </div>
   <div class="form-group">
     <label>rating</label>
-    <input class="form-control" formControlName="rating"></div>
-  <button class="btn btn-primary">update</button>&nbsp;
+    <input class="form-control" formControlName="rating" name="rating" id="rating"></div>
+    <div *ngIf="!rating.valid" class="alert alert-danger">
+      <div [hidden]="!rating.errors.required">
+        <strong>rating is required </strong>
+      </div>
+      <div [hidden]="!rating.errors.pattern">
+        <strong>Only numbers are allowed </strong>
+      </div>
+    </div>
+  <button class="btn btn-primary" >update</button>&nbsp;
   <button class="btn btn-info" routerLink="['/movies']">Back</button>
 </form>
 </html>

@@ -17,8 +17,6 @@ export class SalleComponent implements OnInit {
   searchedItem: string;
   salle2: Salle[] = [];
   subscription : Subscription;
-
-
   constructor(public serviceSalle: SalleService) {
   }
 

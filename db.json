@@ -8,8 +8,9 @@
       "director": "Frank Darabont",
       "actors": "Morgan Freeman, Tim Robbins, Bob Gunton",
       "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-      "rating": "3",
-      "coverUrl": "1.jpg"
+      "rating": "2",
+      "coverUrl": "1.jpg",
+      "fileSource": ""
     },
     {
       "id": 2,
@@ -20,7 +21,11 @@
       "actors": "Marlon Brando, Al Pacino, James Caan",
       "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
       "rating": "4",
-      "coverUrl": "2.jpg"
+      "coverUrl": "2.jpg",
+      "salles": {
+        "nom": "A",
+        "capacite": "3"
+      }
     },
     {
       "id": 3,
@@ -34,7 +39,7 @@
       "coverUrl": "3.jpg",
       "salles": {
         "nom": "C",
-        "capacite": "2"
+        "capacite": "50"
       }
     }
   ],
@@ -50,6 +55,21 @@
     {
       "nom": "C",
       "capacite": "50"
+    },
+    {
+      "nom": "E",
+      "capacite": "54",
+      "id": "jk_B8cB"
+    },
+    {
+      "nom": "F",
+      "capacite": "2",
+      "id": "mjh9AGY"
+    },
+    {
+      "nom": "G",
+      "capacite": "20",
+      "id": "YKw_HCs"
     }
   ]
 }

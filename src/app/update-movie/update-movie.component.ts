@@ -46,5 +46,32 @@ export class UpdateMovieComponent implements OnInit {
         this.router.navigate(['/movies']);
       });
   }
+ 
+  get title() {
+    return this.form.get('title');
+  }
 
+  get year() {
+    return this.form.get('year');
+  }
+
+  get genre() {
+    return this.form.get('genre');
+  }
+
+  get director() {
+    return this.form.get('director');
+  }
+
+  get actors() {
+    return this.form.get('actors');
+  }
+
+  get description() {
+    return this.form.get('description');
+  }
+
+  get rating() {
+    return this.form.get('rating');
+  }
 }

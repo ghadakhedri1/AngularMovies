@@ -20,29 +20,32 @@
     ADD Salle
   </div>
   <div class="card-body">
+   
     <form #Form="ngForm">
-
       <div class="form-group col-12">
-        <label>Name Salle</label>
+        <label>Name</label>
         <input type="text" class="form-control" #nom="ngModel" ngModel name="nom" required
-               pattern="[a-zA-Z ]*">
+        pattern="[a-zA-Z ]*">
       </div>
-        <div *ngIf="!nom?.valid && (nom?.dirty || nom?.touched)" class="alert alert-danger">
+         <div *ngIf="!nom?.valid && (nom?.dirty || nom?.touched)" class="alert alert-danger">
 
-          <strong *ngIf="nom.errors.required">Salle name is required </strong>
-          <strong *ngIf="nom.errors.pattern">Only characters are allowed  </strong>
-        </div>
+          <strong *ngIf="nom.errors.required">Veuillez saisir un nom </strong>
+          <strong *ngIf="nom.errors.pattern">seulement un caractere </strong>
+        </div> 
 
       <div class="form-group col-12">
-        <label>Capacity</label>
-        <input type="text" class="form-control" #capacite="ngModel" ngModel name="capacite" required
+        <label>Capacite</label>
+        <input type="text" class="form-control" #capacite="ngModel" ngModel name="capacite" required maxlength="2"
                pattern="^[0-9]+$">
       </div>
         <div *ngIf="!capacite?.valid && (capacite?.dirty || capacite?.touched)" class="alert alert-danger">
-          <strong *ngIf="capacite.errors.required">Salle capacite is required </strong>
+          <strong *ngIf="capacite.errors.required">Veuillez saisir capacité </strong>
+          <strong *ngIf="capacite.errors.maxlength">
+            id Maximum Length is {{capacite.errors.maxlength?.requiredLength}} </strong>
           <strong *ngIf="capacite.errors.pattern">
-            Only numbers are allowed </strong>
+            seulement un entier </strong>
         </div>
+
       <div class="form-group col-12">
         <button type="submit" class="btn btn-primary mr-2" [disabled]="!Form.valid"
                 (click)="salleService.addSalle(Form.value)">save
@@ -56,5 +59,3 @@
 
 
 </div>
-
-
