@@ -30,9 +30,14 @@
       </select>
     </div>&nbsp;&nbsp;
     <div>
-      <input type="text" class="form-control" [(ngModel)]="searchValue" id="search" placeholder="Search here" (input)="onSearch()">
+      <input type="text" class="form-control" [(ngModel)]="searchValue" id="search" placeholder="Search here" (input)="onSearch()"
+      #searchvalue="ngModel" ngModel name="searchvalue" required>
+    </div>
+    <div *ngIf="!searchvalue?.valid && (searchvalue?.dirty || searchvalue?.touched)" class="alert alert-danger">
+      <strong *ngIf="searchvalue.errors.required">search By year or genre  is required </strong>
     </div>
   </div>
+  
 </nav>
 <section>
   <app-movie-details *ngFor="let movie of movies;let index = index " 

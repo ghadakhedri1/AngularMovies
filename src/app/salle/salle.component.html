@@ -3,7 +3,11 @@
   
     <h2>Salle Disponible</h2>
     <p>Voici les salles disponible et leur capacité:</p>  
-    <input type="text" [(ngModel)]="searchedItem" (input)="onSearch()" placeholder="Search here!">
+    <input type="text" [(ngModel)]="searchedItem" (input)="onSearch()" placeholder="Search here!" #searchvalue="ngModel" ngModel name="searchvalue" required>
+    <div *ngIf="!searchvalue?.valid && (searchvalue?.dirty || searchvalue?.touched)" class="alert alert-danger">
+      <strong *ngIf="searchvalue.errors.required">search By Nom or capacite  is required </strong>
+    </div>
+  
     <hr> 
      
     <table class="table table-striped">
